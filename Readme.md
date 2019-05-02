@@ -1,7 +1,7 @@
 # Личный проект «Шесть городов» [![Build status][travis-image]][travis-url]
 
 * Студент: [Иса Стамкулов](https://up.htmlacademy.ru/react/1/user/373127).
-* Наставник: `Неизвестно`.
+* Наставник: [Артем Приходько](https://htmlacademy.ru/profile/id1012525).
 
 ---
 
