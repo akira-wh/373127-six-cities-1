@@ -11,7 +11,8 @@ module.exports = {
     contentBase: path.join(__dirname, `public`),
     compress: false,
     port: 3000,
-    open: true
+    open: true,
+    watchContentBase: true
   },
 
   module: {
