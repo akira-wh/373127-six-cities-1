@@ -1,15 +1,14 @@
 import React from 'react';
 
-import MainView from '../main-view/main-view.jsx';
+import MainPage from '../main-page/main-page.jsx';
 
 /**
- * Визуальное представление приложения.
+ * Представление всего приложения.
  *
  * @function App
- * @return {object} — react component
+ * @param {object} props — данные компонента
+ * @return {object}
  */
-const App = () => {
-  return <MainView/>;
-};
+const App = (props) => <MainPage data={props.data}/>;
 
 export default App;
