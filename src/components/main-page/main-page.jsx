@@ -11,14 +11,12 @@ import Content from '../main-content/main-content.jsx';
  * @return {object}
  */
 const MainPage = (props) => {
-  const userLogin = props.data.userLogin;
-  const cityNames = props.data.cityNames;
-  const currentCityData = props.data.currentCityData;
+  const {userLogin, cityNames, currentCityName, placesData} = props;
 
   return (
     <>
       <Header isRenderedOnMainPage={true} userLogin={userLogin}/>
-      <Content cityNames={cityNames} currentCityData={currentCityData}/>
+      <Content cityNames={cityNames} currentCityName={currentCityName} placesData={placesData}/>
     </>
   );
 };

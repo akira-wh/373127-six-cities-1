@@ -9,6 +9,6 @@ import MainPage from '../main-page/main-page.jsx';
  * @param {object} props — данные компонента
  * @return {object}
  */
-const App = (props) => <MainPage data={props.data}/>;
+const App = (props) => <MainPage {...props}/>;
 
 export default App;

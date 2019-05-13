@@ -8,7 +8,7 @@ import React from 'react';
  * @return {object}
  */
 const PlaceCard = (props) => {
-  const placeData = props.placeData;
+  const placeData = props;
 
   return (
     <article className="cities__place-card  place-card">
