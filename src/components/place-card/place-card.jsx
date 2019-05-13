@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 /**
  * Представление карты Place.
@@ -63,6 +64,19 @@ const PlaceCard = (props) => {
       </div>
     </article>
   );
+};
+
+/**
+ * Валидация входных данных.
+ */
+PlaceCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  rating: PropTypes.number.isRequired,
+  imageURL: PropTypes.string.isRequired,
+  inBookmarks: PropTypes.bool.isRequired,
+  isPremium: PropTypes.bool.isRequired
 };
 
 export default PlaceCard;

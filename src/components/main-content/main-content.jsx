@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import PlaceCard from '../place-card/place-card.jsx';
 
@@ -100,6 +101,25 @@ const MainContent = (props) => {
       </div>
     </main>
   );
+};
+
+/**
+ * Валидация входных данных.
+ */
+MainContent.propTypes = {
+  cityNames: PropTypes.arrayOf(PropTypes.string).isRequired,
+  currentCityName: PropTypes.string.isRequired,
+  placesData: PropTypes.arrayOf(
+      PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        type: PropTypes.string.isRequired,
+        price: PropTypes.number.isRequired,
+        rating: PropTypes.number.isRequired,
+        imageURL: PropTypes.string.isRequired,
+        inBookmarks: PropTypes.bool.isRequired,
+        isPremium: PropTypes.bool.isRequired
+      }).isRequired
+  ).isRequired
 };
 
 export default MainContent;
