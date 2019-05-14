@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import PlaceCard from '../place-card/place-card.jsx';
 
@@ -10,9 +11,7 @@ import PlaceCard from '../place-card/place-card.jsx';
  * @return {object}
  */
 const MainContent = (props) => {
-  const cityNames = props.cityNames;
-  const currentCityName = props.currentCityData.name;
-  const placesData = props.currentCityData.placesData;
+  const {cityNames, currentCityName, placesData} = props;
 
   return (
     <main className="page__main  page__main--index">
@@ -24,9 +23,7 @@ const MainContent = (props) => {
 
             {
               cityNames.map((cityName, i) => {
-                // Временное решение — по умолчанию активна вкладка первого города в списке.
-                // В дальнейшем статус активности будет выставляться более интеллектуально.
-                const linkActiveModifier = (i === 0) ? `tabs__item--active` : ``;
+                const linkActiveModifier = (cityName === currentCityName) ? `tabs__item--active` : ``;
 
                 return (
                   <li className="locations__item" key={`cityID-${i}`}>
@@ -74,9 +71,7 @@ const MainContent = (props) => {
                   <div className="cities__places-list  places__list  tabs__content">
 
                     {
-                      placesData.map((placeData, i) => {
-                        return <PlaceCard placeData={placeData} key={`placeID-${i}`} />;
-                      })
+                      placesData.map((placeData, i) => <PlaceCard {...placeData} key={`placeID-${i}`}/>)
                     }
 
                   </div>
@@ -106,6 +101,25 @@ const MainContent = (props) => {
       </div>
     </main>
   );
+};
+
+/**
+ * Валидация входных данных.
+ */
+MainContent.propTypes = {
+  cityNames: PropTypes.arrayOf(PropTypes.string).isRequired,
+  currentCityName: PropTypes.string.isRequired,
+  placesData: PropTypes.arrayOf(
+      PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        type: PropTypes.string.isRequired,
+        price: PropTypes.number.isRequired,
+        rating: PropTypes.number.isRequired,
+        imageURL: PropTypes.string.isRequired,
+        inBookmarks: PropTypes.bool.isRequired,
+        isPremium: PropTypes.bool.isRequired
+      }).isRequired
+  ).isRequired
 };
 
 export default MainContent;

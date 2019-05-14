@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 /**
  * Представление Header.
@@ -52,7 +53,14 @@ const Header = (props) => {
       </div>
     </header>
   );
+};
 
+/**
+ * Валидация входных данных.
+ */
+Header.propTypes = {
+  isRenderedOnMainPage: PropTypes.bool,
+  userLogin: PropTypes.string.isRequired
 };
 
 export default Header;
