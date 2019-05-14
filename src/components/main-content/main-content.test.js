@@ -36,7 +36,7 @@ describe(`Отрисовка представления MainContent`, () => {
       ]
     };
 
-    const view = renderer.create(<MainContent {...data} />).toJSON();
+    const view = renderer.create(<MainContent {...data}/>).toJSON();
 
     expect(view).toMatchSnapshot();
   });
@@ -53,7 +53,7 @@ describe(`Отрисовка представления MainContent`, () => {
       placesData: []
     };
 
-    const view = renderer.create(<MainContent {...data} />).toJSON();
+    const view = renderer.create(<MainContent {...data}/>).toJSON();
 
     expect(view).toMatchSnapshot();
   });

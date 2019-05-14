@@ -22,23 +22,23 @@ describe(`Отрисовка представления Header`, () => {
   it(`Второстепенные страницы --> Ссылка логотипа активна.`, () => {
     const userLogin = `markwatney@arescrew.com`;
 
-    const view = renderer.create(<Header userLogin={userLogin} />).toJSON();
+    const view = renderer.create(<Header userLogin={userLogin}/>).toJSON();
 
     expect(view).toMatchSnapshot();
   });
 
-  it(`Пользователь авторизирован (логин - непустая строка) --> Отображается логин.`, () => {
+  it(`Пользователь авторизирован (логин — непустая строка) --> Отображается логин.`, () => {
     const userLogin = `markwatney@arescrew.com`;
 
-    const view = renderer.create(<Header userLogin={userLogin} />).toJSON();
+    const view = renderer.create(<Header userLogin={userLogin}/>).toJSON();
 
     expect(view).toMatchSnapshot();
   });
 
-  it(`Пользователь неавторизирован (логин - пустая строка) --> Отображается предложение авторизации.`, () => {
+  it(`Пользователь неавторизирован (логин — пустая строка) --> Отображается предложение авторизации.`, () => {
     const userLogin = ``;
 
-    const view = renderer.create(<Header userLogin={userLogin} />).toJSON();
+    const view = renderer.create(<Header userLogin={userLogin}/>).toJSON();
 
     expect(view).toMatchSnapshot();
   });

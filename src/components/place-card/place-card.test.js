@@ -14,7 +14,12 @@ it(`Отрисовка представления PlaceCard`, () => {
     isPremium: true
   };
 
-  const view = renderer.create(<PlaceCard {...placeData} />).toJSON();
+  const view = renderer.create(
+      <PlaceCard
+        placeData={placeData}
+        onTitleLinkClick={(evt) => evt.preventDefault()}
+      />
+  ).toJSON();
 
   expect(view).toMatchSnapshot();
 });

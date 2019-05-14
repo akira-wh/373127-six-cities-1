@@ -206,6 +206,7 @@ exports[`Отрисовка представления MainContent В город
               >
                 <a
                   href="#"
+                  onClick={[Function]}
                 >
                   Room in THE KNOT TOKYO Shinjuku
                 </a>
@@ -309,6 +310,7 @@ exports[`Отрисовка представления MainContent В город
               >
                 <a
                   href="#"
+                  onClick={[Function]}
                 >
                   Room in THE KNOT TOKYO Shinjuku
                 </a>

@@ -93,6 +93,7 @@ exports[`Отрисовка представления PlaceCard 1`] = `
     >
       <a
         href="#"
+        onClick={[Function]}
       >
         Room in THE KNOT TOKYO Shinjuku
       </a>

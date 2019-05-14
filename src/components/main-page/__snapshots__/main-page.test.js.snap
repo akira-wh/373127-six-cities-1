@@ -267,6 +267,7 @@ Array [
                 >
                   <a
                     href="#"
+                    onClick={[Function]}
                   >
                     Habitation Module
                   </a>
