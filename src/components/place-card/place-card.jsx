@@ -9,15 +9,15 @@ import PropTypes from 'prop-types';
  * @return {object}
  */
 const PlaceCard = (props) => {
-  const placeData = props;
+  const placeData = props.placeData;
+  const onTitleLinkClick = props.onTitleLinkClick;
 
   return (
     <article className="cities__place-card  place-card">
 
       {
         placeData.isPremium ?
-          <div className="place-card__mark"><span>Premium</span></div> :
-          null
+          <div className="place-card__mark"><span>Premium</span></div> : null
       }
 
       <div className="cities__image-wrapper  place-card__image-wrapper">
@@ -57,7 +57,7 @@ const PlaceCard = (props) => {
         </div>
 
         <h2 className="place-card__name">
-          <a href="#">{placeData.title}</a>
+          <a href="#" onClick={onTitleLinkClick}>{placeData.title}</a>
         </h2>
 
         <p className="place-card__type">{placeData.type}</p>
@@ -70,13 +70,16 @@ const PlaceCard = (props) => {
  * Валидация входных данных.
  */
 PlaceCard.propTypes = {
-  title: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
-  rating: PropTypes.number.isRequired,
-  imageURL: PropTypes.string.isRequired,
-  inBookmarks: PropTypes.bool.isRequired,
-  isPremium: PropTypes.bool.isRequired
+  placeData: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    rating: PropTypes.number.isRequired,
+    imageURL: PropTypes.string.isRequired,
+    inBookmarks: PropTypes.bool.isRequired,
+    isPremium: PropTypes.bool.isRequired
+  }).isRequired,
+  onTitleLinkClick: PropTypes.func.isRequired
 };
 
 export default PlaceCard;

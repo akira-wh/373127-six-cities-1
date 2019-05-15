@@ -71,7 +71,13 @@ const MainContent = (props) => {
                   <div className="cities__places-list  places__list  tabs__content">
 
                     {
-                      placesData.map((placeData, i) => <PlaceCard {...placeData} key={`placeID-${i}`}/>)
+                      placesData.map((placeData, i) => {
+                        return <PlaceCard
+                          placeData={placeData}
+                          onTitleLinkClick={(evt) => evt.preventDefault()}
+                          key={`placeID-${i}`}
+                        />;
+                      })
                     }
 
                   </div>
